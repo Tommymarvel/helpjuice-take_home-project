@@ -1,0 +1,24 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Articles</h1>
+
+<div id="search-box">
+<%= search_form_for @q do |f| %>
+  <%= f.search_field :title_or_body_cont, placeholder: "Search..." %>
+  <%= f.submit "Search!" %>
+<% end %>
+</div>
+
+
+
+
+<div id="articles">
+  <% @articles.each do |article| %>
+    <%= render article %>
+    <p>
+      <%= link_to "Show this article", article %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New article", new_article_path %>
