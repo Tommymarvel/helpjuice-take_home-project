@@ -1,0 +1,2 @@
+class SearchCount < ApplicationRecord
+end
