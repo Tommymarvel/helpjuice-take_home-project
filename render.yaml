@@ -1,8 +1,8 @@
 databases:
   - name: postgres
     ipAllowList: []
-    databaseName: take-home_project
-    user: take-home_project
+    databaseName: take_home_project
+    user: take_home_project
 
 services:
   - type: web
