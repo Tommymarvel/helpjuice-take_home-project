@@ -1,0 +1,14 @@
+<div class="w-full flex justify-center items-start min-h-screen">
+
+<div class="w-1/2 flex-1">
+  <div class="flex justify-center items-center">
+    <h1 class="font-bold text-4xl my-6">Programming Languages
+</h1>
+  </div>
+
+  <%= render partial: 'queries/search_bar', locals: {url: search_articles_url, placeholder: 'Search by title...'} %>
+
+  <%= render 'list', articles: @articles %>
+</div>
+</div>
+<%= render partial: 'charts/charts', locals: {top_global_searches: @top_global_searches, top_user_searches: @top_user_searches} %>

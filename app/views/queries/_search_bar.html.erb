@@ -1,0 +1,9 @@
+  <%= form_with(url: , class: "my-6", data: { controller: 'form-submission', 'form-submission-target': 'form'}) do |form| %>
+  
+    <%= form.hidden_field :finished, value: false, data: { 'form-submission-target': 'finished'} %>
+  
+    <div class=" flex justify-center items-center gap-5">
+      <%= form.label :query, "Search by title:", class: 'hidden' %>
+      <%= form.text_field :query, placeholder: , data: { action: "input->form-submission#search blur->form-submission#create" } %>
+    </div>
+  <% end %>

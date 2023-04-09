@@ -1,0 +1,13 @@
+<div id="charts" class="self-center">
+  <div class="my-8">
+    <h3 class="font-bold my-8">The hottest searches: </h3>
+    <%= column_chart top_global_searches, colors: ["#b00", "#666"]
+ %>
+  </div>
+  <div class="my-8">
+    <h3 class="font-bold my-8">Your hottest searches: </h3>
+    <%= column_chart top_user_searches, colors: ["#b00", "#666"],  width: "500px", height: "400px"
+
+ %>
+  </div>
+</div>
