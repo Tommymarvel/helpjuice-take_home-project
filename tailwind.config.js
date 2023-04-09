@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: 'linear-gradient(to left, #fc354c, #0abfbc)',
+        
       },
     },
   },
