@@ -59,3 +59,5 @@ group :development do
 
   gem 'rubocop-rspec', require: false
 end
+
+gem 'sassc-rails'
