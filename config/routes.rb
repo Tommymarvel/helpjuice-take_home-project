@@ -1,16 +1,13 @@
 Rails.application.routes.draw do
-  devise_for :users
-  resources :users
-  mount ActionCable.server => "/cable"
-  get "/search_count", to: "search_count#index"
-  resources :articles do
-  collection do
-    get 'search'
+  resources :articles, only: [:index] do
+    collection { post :search, to: 'queries#search' }
   end
-end
 
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  resources :users, only: [:create]
 
-  # Defines the root path route ("/")
-  root "articles#index"
+  delete '/logout', to: 'users#delete_session'
+
+  get '/charts', to: 'charts#render_charts'
+
+  root 'articles#index'
 end

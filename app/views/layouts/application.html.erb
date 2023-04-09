@@ -1,19 +1,44 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Myapp</title>
+    <title>Realtime Search Box Analytics</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <%= action_cable_meta_tag %>
+
+   
+   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
+
+
+
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
-
-
   </head>
 
-  <body>
-    <%= yield %>
+  <body class=" bg-slate-300">
+
+    <% if @current_user %>
+      <header class="flex justify-between bg-slate-900 px-8 py-3">
+        <p class=" text-white">
+          Signed in as: <strong><%= @current_user.name %></strong>
+        </p>
+
+        <%= button_to "Logout", logout_path , { method: :delete, data: { turbo: false }, class: 'rounded-lg py-3 px-5 bg-blue-600 text-white font-medium cursor-pointer' } %>
+      </header>
+
+      <main class="container mx-auto flex flex-col w-full">
+          <%= yield %>
+      </main>
+
+    <% else %>
+      <div class="h-screen w-screen flex justify-center items-center flex-col">
+        <div class="bg-slate-400 px-16 py-24 border border-transparent rounded-lg shadow-md shadow-black">
+          <h2 class=" font-bold text-lg text-center mb-12">Please, identify yourself:</h2>
+          <%= render partial: 'users/form', locals: { user: User.new }%>
+        </div>
+      </div>
+    <% end %>
   </body>
 </html>

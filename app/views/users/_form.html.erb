@@ -1,0 +1,10 @@
+<%= form_with(model: user, class: "flex flex-col justify-center items-center gap-5") do |form| %>
+    <div class="my-5">
+      <%= form.label :name, class: 'hidden' %>
+      <%= form.text_field :name, placeholder: "Enter your name", required: true, class: "block shadow rounded-md border border-gray-200 outline-none px-5 py-3" %>
+    </div>
+    
+    <div class="w-full">
+      <%= form.submit "Identify", class: "rounded-lg py-3 px-5 bg-blue-600 text-white font-medium cursor-pointer w-full block" %>
+    </div>
+<% end %>
