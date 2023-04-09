@@ -52,7 +52,8 @@ After you're finished please remove all the comments and instructions!
 
 # 📖  Helpjuice Take-home Assignment <a name="about-project"></a>
 
-> This is a budget app where you can setup your different budgets and you can create different categories and also delete your own categories and also create new transactions and also delete your own transactions.
+> A realtime search box, where users search articles, and then to have analytics that display what users were searching for. 
+
 
 ## 🛠 Built With <a name="built-with"></a>
 
